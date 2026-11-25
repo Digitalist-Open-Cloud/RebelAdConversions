@@ -1,0 +1,28 @@
+{
+    "name": "RebelAdConversions",
+    "description": "Send the conversions that Matomo measures back to Google Ads and Microsoft Advertising, for the visitors who agreed to it.",
+    "version": "5.0.0",
+    "theme": false,
+    "require": {
+        "matomo": ">=5.14.1-stable,<6.0.0-b1",
+        "php": ">=8.3.0"
+    },
+    "authors": [
+        {
+            "name": "Digitalist Open Cloud",
+            "email": "cloud@digitalist.com",
+            "homepage": "https:\/\/digitalist.cloud"
+        }
+    ],
+    "support": {
+        "issues": "https:\/\/github.com\/Digitalist-Open-Cloud\/RebelAdConversions\/issues"
+    },
+    "homepage": "https:\/\/digitalist.cloud",
+    "license": "GPL v3+",
+    "keywords": [
+        "ads",
+        "conversions",
+        "google ads",
+        "microsoft advertising"
+    ]
+}

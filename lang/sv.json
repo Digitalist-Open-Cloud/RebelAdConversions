@@ -1,0 +1,25 @@
+{
+    "RebelAdConversions": {
+        "AdConversions": "Annonskonverteringar",
+        "ChangeSettings": "Välj vad som exporteras i webbplatsens inställningar",
+        "ClicksStored": "Sparade annonsklick, senaste %s dagarna",
+        "Consent": "Ett annonsklick sparas bara för en besökare som har samtyckt till marknadsföring. Låt webbplatsens samtyckesverktyg göra det här anropet på varje sida där besökaren har samtyckt, även direkt efter att samtycket ges:",
+        "ConsentTitle": "Samtycke",
+        "EcommerceOrders": "E-handelsordrar",
+        "ErrorConversion": "Varje konvertering som ska exporteras behöver ett av webbplatsens mål och ett namn på högst %s tecken.",
+        "Exported": "De här konverteringarna exporteras, med de här namnen:",
+        "ExportedTitle": "Vad som exporteras",
+        "File": "Fil",
+        "Files": "En fil innehåller konverteringarna från de senaste %1$s dagarna. Lägg till \"&days=\" med ett tal upp till %2$s i adressen för ett annat antal dagar. Tiderna är i UTC. Det gör inget om en konvertering laddas upp två gånger: annonsplattformarna räknar den en gång.",
+        "FilesTitle": "Filer",
+        "Intro": "Skickar konverteringarna som Matomo mäter tillbaka till annonsplattformarna. En konvertering exporteras när besökaren kom från en annons högst %s dagar tidigare och har samtyckt till marknadsföring.",
+        "NothingExported": "Inget exporteras och inga annonsklick sparas för den här webbplatsen.",
+        "Platform": "Annonsplattform",
+        "ResetToken": "Byt ut hemligheten",
+        "ScheduledUrl": "Adress för schemalagd import",
+        "SettingConversionName": "Konverteringens namn på annonsplattformen",
+        "SettingConversions": "Konverteringar som skickas till annonsplattformar",
+        "SettingConversionsHelp": "Välj ett mål och ange namnet som konverteringen har i Google Ads och Microsoft Advertising, exakt som det står där. Annonsklick sparas för webbplatsen så snart en konvertering finns i listan.",
+        "TokenHelp": "Adresserna innehåller en hemlighet och kräver ingen inloggning, så att en annonsplattform kan hämta filen enligt schema. Den som har en adress kan läsa filen. Byt ut hemligheten om en adress har kommit ut; annonsplattformarna behöver då de nya adresserna."
+    }
+}

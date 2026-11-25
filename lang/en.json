@@ -1,0 +1,25 @@
+{
+    "RebelAdConversions": {
+        "AdConversions": "Ad conversions",
+        "ChangeSettings": "Choose what is exported in the settings of the website",
+        "ClicksStored": "Ad clicks stored, last %s days",
+        "Consent": "An ad click is only stored for a visitor who agreed to marketing. Let the consent tool of the website make this call on every page where the visitor has agreed, also right after they agree:",
+        "ConsentTitle": "Consent",
+        "EcommerceOrders": "Ecommerce orders",
+        "ErrorConversion": "Each conversion to export needs a goal of the website and a name of at most %s characters.",
+        "Exported": "These conversions are exported, under these names:",
+        "ExportedTitle": "What is exported",
+        "File": "File",
+        "Files": "A file holds the conversions of the last %1$s days. Add \"&days=\" with a number up to %2$s to its address for another number of days. Times are in UTC. Uploading a conversion twice does no harm: the ad platforms count it once.",
+        "FilesTitle": "Files",
+        "Intro": "Sends the conversions that Matomo measures back to the ad platforms. A conversion is exported when its visitor came from an ad at most %s days before it and agreed to marketing.",
+        "NothingExported": "Nothing is exported and no ad clicks are stored for this website.",
+        "Platform": "Ad platform",
+        "ResetToken": "Replace the secret",
+        "ScheduledUrl": "Address for a scheduled import",
+        "SettingConversionName": "Name of the conversion on the ad platform",
+        "SettingConversions": "Conversions to send to ad platforms",
+        "SettingConversionsHelp": "Choose a goal and give the name its conversion has in Google Ads and Microsoft Advertising, exactly as it is written there. Ad clicks are stored for the website as soon as one conversion is listed.",
+        "TokenHelp": "The addresses hold a secret and need no login, so that an ad platform can fetch the file on a schedule. Anyone who has an address can read the file. Replace the secret if an address got out; the ad platforms then need the new addresses."
+    }
+}
