@@ -14,12 +14,14 @@ use Piwik\Common;
 use Piwik\Date;
 use Piwik\Db;
 use Piwik\NoAccessException;
+use Piwik\Piwik;
 use Piwik\Nonce;
 use Piwik\Plugins\Goals\API as GoalsApi;
 use Piwik\Plugins\PrivacyManager\Model\DataSubjects;
 use Piwik\Plugins\RebelAdConversions\Controller;
 use Piwik\Plugins\RebelAdConversions\Dao\LogClick;
 use Piwik\Plugins\RebelAdConversions\Export;
+use Piwik\Plugins\RebelAdConversions\Tasks;
 use Piwik\Plugins\SitesManager\API as SitesManagerApi;
 use Piwik\Container\StaticContainer;
 use Piwik\Tests\Framework\Fixture;
@@ -265,6 +267,10 @@ class AdConversionsTest extends IntegrationTestCase
         $_GET = ['idSite' => '1'];
         $_POST = ['nonce' => Nonce::getNonce('RebelAdConversions.resetToken')];
         $_SERVER['REQUEST_METHOD'] = 'POST';
+        $replaced = [];
+        Piwik::addAction('RebelAdConversions.secret.replaced', function ($idSite) use (&$replaced) {
+            $replaced[] = $idSite;
+        });
 
         try {
             (new Controller())->resetToken();
@@ -275,6 +281,7 @@ class AdConversionsTest extends IntegrationTestCase
 
         $this->assertFalse(Export::isToken(1, $old));
         $this->assertTrue(Export::isToken(1, Export::getToken(1)));
+        $this->assertSame([1], $replaced);
     }
 
     public function testTheSecretIsNotReplacedWithoutAPostAndANonce()
@@ -327,6 +334,16 @@ class AdConversionsTest extends IntegrationTestCase
             'a goal that does not exist' => [['goal' => '99', 'name' => 'Lead']],
             'a name that is too long' => [['goal' => '0', 'name' => str_repeat('n', 101)]],
         ];
+    }
+
+    public function testAClickThatNoFileCanHoldIsDeleted()
+    {
+        $this->startVisit(1, 'gclid:Old-click', '2023-09-06');
+        $this->startVisit(1, 'gclid:Kept-click', '2023-09-08');
+
+        (new Tasks())->deleteOldClicks();
+
+        $this->assertSame(['Kept-click'], array_column($this->getClicks(), 'click_id'));
     }
 
     public function testDeletingAVisitDeletesItsClick()

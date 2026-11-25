@@ -104,6 +104,7 @@ class Controller extends ControllerAdmin
         Nonce::checkNonce(self::NONCE, Request::fromPost()->getStringParameter('nonce', ''));
 
         Export::resetToken($idSite);
+        Piwik::postEvent('RebelAdConversions.secret.replaced', [$idSite]);
 
         Url::redirectToUrl('?' . http_build_query(['module' => 'RebelAdConversions', 'action' => 'index', 'idSite' => $idSite]));
     }

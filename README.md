@@ -74,12 +74,13 @@ is at most 90 days older than the conversion.
 The address for a scheduled import holds a secret of the website and needs no login. The secret
 can also be given as the password of HTTP authentication, with any user name, and left out of the
 address. Anyone who has the address can read the file, so treat it as a password. "Replace the
-secret" on the page makes the old addresses stop working.
+secret" on the page makes the old addresses stop working. RebelAuditLog logs it.
 
 ## Privacy
 
 - Click IDs are stored in their own table with the visit. Deleting a visit, by the data retention
   of Matomo or by the GDPR tools, deletes its click.
+- A click that is too old to be in a file, 180 days, is deleted by a daily task.
 - Deleting a website deletes its clicks and its secret.
 - The plugin sends nothing to an ad platform by itself. Data leaves Matomo when a file is
   downloaded or fetched.

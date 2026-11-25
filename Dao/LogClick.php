@@ -107,6 +107,11 @@ class LogClick
         );
     }
 
+    public function deleteOlderThan(string $datetime): void
+    {
+        Db::query('DELETE FROM ' . $this->table() . ' WHERE server_time < ?', [$datetime]);
+    }
+
     public function deleteSite(int $idSite): void
     {
         Db::query('DELETE FROM ' . $this->table() . ' WHERE idsite = ?', [$idSite]);
